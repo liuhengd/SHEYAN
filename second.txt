@@ -1,0 +1,49 @@
+三、	实验步骤与结果
+
+1.在电脑上安装git
+  git version   可查看git版本
+  git –help    可查看命令
+  git config --global user.name "Your Name"   配置用户名
+  git config --global user.email email@example.com    配置Email地址
+2.创建版本库
+  1）选择一个合适的地方，创建一个空目录：
+ mkdir learngit
+ cd learngit
+ pwd     显示当前目录
+/Github   在我的电脑上，这个仓库位于
+  2）这个目录变成Git可以管理的仓库：
+     git init
+         Initialized empty Git repository in D:/boke/Git/Github/.git/
+         发现当前目录下多了一个.git的目录，这个目录是Git来跟踪管理版本库的，默认是隐藏的，用ls -ah命令就可以看见
+3.把文件放到版本库
+  1) 编写一个readme.txt文件
+  2) 把一个文件添加到Git仓库
+git add readme.txt
+      3) 把文件提交到仓库
+     git commit -m " readme.txt "
+4.管理修改：新增一行，删除一行，更改某些字符，删了一些又加一些，甚至创建一个新文件，都算一个修改
+  1）对readme.txt做一个修改
+     cat readme.txt
+  2）添加
+     git add readme.txt
+  3）提交
+     git commit -m "readme.tx"
+    5.远程仓库：已经在本地创建了一个Git仓库后，又想在GitHub创建一个Git仓库，并且让这两个仓库进行远程同步，这样，GitHub上的仓库既可以作为备份
+      1）添加远程仓库
+         登陆GitHub，然后，在右上角找到“Create a new repo”按钮，创建一个新的仓库
+      2）把本地仓库的内容推送到shiyan2仓库
+         git remote add origin git@github.com:liuhengd/shiysn2.git
+      3) 把本地库的所有内容推送到远程库上
+         git push -u origin master
+      4）之后，只要本地作了提交，就可以通过命令
+         git push origin master
+      5）从远程仓库克隆
+         git clone git@github.com: liuhengd/shiysn2.git   用命令克隆一个本地库
+         cd gitskills$ 
+         ls    README.md
+
+四、	实验小结
+1）Git是分布式版本控制系统
+2）拥有一个GitHub账号，就拥有了一个远程仓库。
+3）要克隆一个仓库，首先必须知道仓库的地址，然后使用git clone命令克隆
+4）版本库又名仓库，英文名repository，也可以简单理解成一个目录，这个目录里面的所有文件都可以被Git管理起来，每个文件的修改、删除，Git都能跟踪，以便任何时刻都可以追踪历史，或者在将来某个时刻可以“还原”。
